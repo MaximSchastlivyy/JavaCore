@@ -45,4 +45,13 @@ public class Cat implements CanRun, CanJump {
         System.out.println("Кот прыгнул");
     }
 
+    @Override
+    public int anybodyRun() {
+        return getMaxSpeed();
+    }
+
+    @Override
+    public int anybodyJump() {
+        return getMaxJump();
+    }
 }

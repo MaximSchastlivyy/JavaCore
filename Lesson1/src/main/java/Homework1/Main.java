@@ -47,54 +47,35 @@ public class Main {
         RunRoad[] runRoads = {new RunRoad(150, 1), new RunRoad(200, 2)};
         Wall[] walls = {new Wall(100, 1), new Wall(200, 2)};
 
+
         for (RunRoad runRoad : runRoads) {
             for (Cat cat : cats) {
-                if (cat.getMaxSpeed() >= runRoad.getRunRoadLength()) {
-                    System.out.println("Кот " + cat.getName() + " успешно пробежал по беговой дорожке №" + runRoad.getNumber());
-                } else {
-                    System.out.println("Кот " + cat.getName() + " не смог пробежать по беговой дорожке №" + runRoad.getNumber());
-                }
+                System.out.println("Кот " + cat.getName());
+                runRoad.canAnybodyRun(cat);
             }
             for (Human human : humans) {
-                if (human.getMaxSpeed() >= runRoad.getRunRoadLength()) {
-                    System.out.println("Человек " + human.getName() + " успешно пробежал по беговой дорожке №" + runRoad.getNumber());
-                } else {
-                    System.out.println("Человек " + human.getName() + " не смог пробежать по беговой дорожке №" + runRoad.getNumber());
-                }
+                System.out.println("Человек " + human.getName());
+                runRoad.canAnybodyRun(human);
             }
             for (Robot robot : robots) {
-                if (robot.getMaxSpeed() >= runRoad.getRunRoadLength()) {
-                    System.out.println("Робот " + robot.getName() + " успешно пробежал по беговой дорожке №" + runRoad.getNumber());
-                } else {
-                    System.out.println("Робот " + robot.getName() + " не смог пробежать по беговой дорожке №" + runRoad.getNumber());
-                }
+                System.out.println("Робот " + robot.getName());
+                runRoad.canAnybodyRun(robot);
             }
         }
 
         for (Wall wall : walls) {
             for (Cat cat : cats) {
-                if (cat.getMaxJump() >= wall.getWallHeight()) {
-                    System.out.println("Кот " + cat.getName() + " успешно перепрыгнул стену №" + wall.getNumber());
-                } else {
-                    System.out.println("Кот " + cat.getName() + " не смог перепрыгнуть стену №" + wall.getNumber());
-                }
+                System.out.println("Кот " + cat.getName());
+                wall.canAnybodyJump(cat);
             }
             for (Human human : humans) {
-                if (human.getMaxJump() >= wall.getWallHeight()) {
-                    System.out.println("Человек " + human.getName() + " успешно перепрыгнул стену №" + wall.getNumber());
-                } else {
-                    System.out.println("Человек " + human.getName() + " не смог перепрыгнуть стену №" + wall.getNumber());
-                }
+                System.out.println("Человек " + human.getName());
+                wall.canAnybodyJump(human);
             }
             for (Robot robot : robots) {
-                if (robot.getMaxJump() >= wall.getWallHeight()) {
-                    System.out.println("Робот " + robot.getName() + " успешно перепрыгнул стену №" + wall.getNumber());
-                } else {
-                    System.out.println("Робот " + robot.getName() + " не смог перепрыгнуть стену №" + wall.getNumber());
-                }
+                System.out.println("Робот " + robot.getName());
+                wall.canAnybodyJump(robot);
             }
         }
-
-
     }
 }

@@ -45,4 +45,13 @@ public class Robot implements CanRun, CanJump {
         System.out.println("Робот прыгнул");
     }
 
+    @Override
+    public int anybodyRun() {
+        return getMaxSpeed();
+    }
+
+    @Override
+    public int anybodyJump() {
+        return getMaxJump();
+    }
 }

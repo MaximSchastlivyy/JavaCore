@@ -16,15 +16,11 @@ public class Wall {
         return wallHeight;
     }
 
-    public void setWallHeight(int wallHeight) {
-        this.wallHeight = wallHeight;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
+    public void canAnybodyJump (CanJump jumper) {
+        if (jumper.anybodyJump() >= wallHeight) {
+            System.out.println("Успешно перепрыгнул стену №" + number);
+        } else {
+            System.out.println("Не смог перепрыгнуть стену №" + number);
+        }
     }
 }

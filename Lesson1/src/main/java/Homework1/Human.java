@@ -44,4 +44,14 @@ public class Human implements CanRun, CanJump {
     public void jump() {
         System.out.println("Человек прыгнул");
     }
+
+    @Override
+    public int anybodyRun() {
+        return getMaxSpeed();
+    }
+
+    @Override
+    public int anybodyJump() {
+        return getMaxJump();
+    }
 }

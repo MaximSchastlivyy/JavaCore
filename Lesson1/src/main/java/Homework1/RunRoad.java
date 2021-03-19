@@ -14,18 +14,15 @@ public class RunRoad {
     }
 
     public int getRunRoadLength() {
-        return runRoadLength;
+      return runRoadLength;
     }
 
-    public void setRunRoadLength(int runRoadLength) {
-        this.runRoadLength = runRoadLength;
+    public void canAnybodyRun (CanRun runner) {
+        if (runner.anybodyRun() >= runRoadLength) {
+            System.out.println("Успешно пробежал по дорожке №" + number);
+        } else {
+            System.out.println("Не смог пробежать по дорожке №" + number);
+        }
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
 }

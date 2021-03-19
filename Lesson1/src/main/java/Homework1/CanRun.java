@@ -1,5 +1,7 @@
 package Homework1;
 
 public interface CanRun {
-    void run();
+    public void run();
+
+    public int anybodyRun();
 }

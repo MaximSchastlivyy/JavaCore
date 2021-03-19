@@ -1,5 +1,7 @@
 package Homework1;
 
 public interface CanJump {
-    void jump();
+    public void jump();
+
+    public int anybodyJump ();
 }
