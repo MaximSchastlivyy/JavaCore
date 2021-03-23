@@ -10,12 +10,12 @@ public class Main {
 
         System.out.println("Задание №1:");
 
-        cat1.jump();
-        cat1.run();
-        human1.run();
-        human1.jump();
-        robot1.run();
-        robot1.jump();
+        cat1.jump(cat1.getMaxJump());
+        cat1.run(cat1.getMaxSpeed());
+        human1.run(human1.getMaxSpeed());
+        human1.jump(human1.getMaxJump());
+        robot1.run(robot1.getMaxSpeed());
+        robot1.jump(robot1.getMaxJump());
 
         System.out.println();
 
@@ -44,36 +44,30 @@ public class Main {
         Human[] humans = {new Human("Ivan", 200, 100), new Human("Petr", 220, 150)};
         Robot[] robots = {new Robot("T-100", 300, 200), new Robot("R2D2", 250, 100)};
 
-        RunRoad[] runRoads = {new RunRoad(150, 1), new RunRoad(200, 2)};
-        Wall[] walls = {new Wall(100, 1), new Wall(200, 2)};
+        RunRoad[] runRoads = {new RunRoad(150), new RunRoad(200)};
+        Wall[] walls = {new Wall(100), new Wall(200)};
 
 
         for (RunRoad runRoad : runRoads) {
             for (Cat cat : cats) {
-                System.out.println("Кот " + cat.getName());
                 runRoad.canAnybodyRun(cat);
             }
             for (Human human : humans) {
-                System.out.println("Человек " + human.getName());
                 runRoad.canAnybodyRun(human);
             }
             for (Robot robot : robots) {
-                System.out.println("Робот " + robot.getName());
                 runRoad.canAnybodyRun(robot);
             }
         }
 
         for (Wall wall : walls) {
             for (Cat cat : cats) {
-                System.out.println("Кот " + cat.getName());
                 wall.canAnybodyJump(cat);
             }
             for (Human human : humans) {
-                System.out.println("Человек " + human.getName());
                 wall.canAnybodyJump(human);
             }
             for (Robot robot : robots) {
-                System.out.println("Робот " + robot.getName());
                 wall.canAnybodyJump(robot);
             }
         }

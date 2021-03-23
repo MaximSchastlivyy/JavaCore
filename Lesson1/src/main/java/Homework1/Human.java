@@ -35,23 +35,30 @@ public class Human implements CanRun, CanJump {
         this.maxJump = maxJump;
     }
 
-    @Override
-    public void run(){
-        System.out.println("Человек пробежал");
+   //@Override
+   //public void run(){
+   //    System.out.println("Человек пробежал");
+   //}
+
+   //@Override
+   //public void jump() {
+   //    System.out.println("Человек прыгнул");
+   //}
+
+    public void run(int length) {
+        if (getMaxSpeed() >= length) {
+            System.out.println("Человек " + getName() + " успешно пробежал по дорожке!");
+        } else {
+            System.out.println("Человек " + getName() + " не смог пробежать по дорожке!");
+        }
     }
 
     @Override
-    public void jump() {
-        System.out.println("Человек прыгнул");
-    }
-
-    @Override
-    public int anybodyRun() {
-        return getMaxSpeed();
-    }
-
-    @Override
-    public int anybodyJump() {
-        return getMaxJump();
+    public void jump(int height) {
+        if (getMaxSpeed() >= height) {
+            System.out.println("Человек " + getName() + " успешно перепрыгнул стену!");
+        } else {
+            System.out.println("Человек " + getName() + " не смог перепрыгнуть стену!");
+        }
     }
 }

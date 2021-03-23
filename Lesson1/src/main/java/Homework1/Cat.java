@@ -35,23 +35,31 @@ public class Cat implements CanRun, CanJump {
         this.maxJump = maxJump;
     }
 
+    //@Override
+    //public void run(int length) {
+    //    System.out.println("Кот пробежал");
+    //}
+
+    //@Override
+    //public void jump() {
+    //    System.out.println("Кот прыгнул");
+    //}
+
     @Override
-    public void run(){
-        System.out.println("Кот пробежал");
+    public void run(int length) {
+        if (getMaxSpeed() >= length) {
+            System.out.println("Кот " + getName() + " успешно пробежал по дорожке!");
+        } else {
+            System.out.println("Кот " + getName() + " не смог пробежать по дорожке!");
+        }
     }
 
     @Override
-    public void jump() {
-        System.out.println("Кот прыгнул");
-    }
-
-    @Override
-    public int anybodyRun() {
-        return getMaxSpeed();
-    }
-
-    @Override
-    public int anybodyJump() {
-        return getMaxJump();
+    public void jump(int height) {
+        if (getMaxSpeed() >= height) {
+            System.out.println("Кот " + getName() + " успешно перепрыгнул стену!");
+        } else {
+            System.out.println("Кот " + getName() + " не смог перепрыгнуть стену!");
+        }
     }
 }

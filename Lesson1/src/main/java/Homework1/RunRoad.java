@@ -18,11 +18,7 @@ public class RunRoad {
     }
 
     public void canAnybodyRun (CanRun runner) {
-        if (runner.anybodyRun() >= runRoadLength) {
-            System.out.println("Успешно пробежал по дорожке №" + number);
-        } else {
-            System.out.println("Не смог пробежать по дорожке №" + number);
-        }
+        runner.run(runRoadLength);
     }
 
 }

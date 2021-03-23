@@ -17,10 +17,6 @@ public class Wall {
     }
 
     public void canAnybodyJump (CanJump jumper) {
-        if (jumper.anybodyJump() >= wallHeight) {
-            System.out.println("Успешно перепрыгнул стену №" + number);
-        } else {
-            System.out.println("Не смог перепрыгнуть стену №" + number);
-        }
+        jumper.jump(wallHeight);
     }
 }

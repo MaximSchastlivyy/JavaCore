@@ -35,23 +35,31 @@ public class Robot implements CanRun, CanJump {
         this.maxJump = maxJump;
     }
 
+    //@Override
+    //public void run(){
+    //    System.out.println("Робот пробежал");
+    //}
+//
+    //@Override
+    //public void jump() {
+    //    System.out.println("Робот прыгнул");
+    //}
+
     @Override
-    public void run(){
-        System.out.println("Робот пробежал");
+    public void run(int length) {
+        if (getMaxSpeed() >= length) {
+            System.out.println("Робот " + getName() + " успешно пробежал по дорожке!");
+        } else {
+            System.out.println("Робот " + getName() + " не смог пробежать по дорожке!");
+        }
     }
 
     @Override
-    public void jump() {
-        System.out.println("Робот прыгнул");
-    }
-
-    @Override
-    public int anybodyRun() {
-        return getMaxSpeed();
-    }
-
-    @Override
-    public int anybodyJump() {
-        return getMaxJump();
+    public void jump(int height) {
+        if (getMaxSpeed() >= height) {
+            System.out.println("Робот " + getName() + " успешно перепрыгнул стену!");
+        } else {
+            System.out.println("Робот " + getName() + " не смог перепрыгнуть стену!");
+        }
     }
 }
